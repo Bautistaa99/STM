@@ -132,12 +132,17 @@ const Productos = () => {
             {filteredProducts.map((product, index) => (
               <Card key={index} className="hover:shadow-card transition-all duration-300 hover:-translate-y-1">
                 <CardContent className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center">
-                      <span className="text-2xl">
-                        {getCategoryIcon(product.category)}
-                      </span>
+                  <div className="aspect-square mb-4 overflow-hidden rounded-lg bg-accent/50 border-2 border-dashed border-muted-foreground/20 flex items-center justify-center">
+                    <div className="text-center">
+                      <Package className="h-12 w-12 text-muted-foreground/40 mx-auto mb-2" />
+                      <span className="text-xs text-muted-foreground/60">Imagen del producto</span>
                     </div>
+                  </div>
+                  
+                  <div className="flex items-center justify-between mb-4">
+                    <Badge variant="outline" className="text-xs">
+                      {categories.find(cat => cat.id === product.category)?.name}
+                    </Badge>
                     {product.featured && (
                       <Badge variant="secondary" className="text-xs">
                         Más Vendido
@@ -152,10 +157,7 @@ const Productos = () => {
                     {product.description}
                   </p>
                   
-                  <div className="flex items-center justify-between">
-                    <Badge variant="outline" className="text-xs">
-                      {categories.find(cat => cat.id === product.category)?.name}
-                    </Badge>
+                  <div className="flex items-center justify-end">
                     <Package className="h-4 w-4 text-muted-foreground" />
                   </div>
                 </CardContent>
