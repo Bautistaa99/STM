@@ -109,6 +109,14 @@ const Index = () => {
               </Card>
             ))}
           </div>
+          
+          <div className="text-center mt-12">
+            <Button asChild size="lg" variant="outline">
+              <Link to="/productos">
+                Ver Todos los Productos <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
 
