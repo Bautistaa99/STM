@@ -8,6 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Phone, Mail, MapPin, MessageCircle, Clock, Send } from "lucide-react";
+import contactoHero from "@/assets/contacto-hero.jpg";
 
 const Contacto = () => {
   const [formData, setFormData] = useState({
@@ -54,8 +55,11 @@ const Contacto = () => {
       <Navbar />
       
       {/* Header */}
-      <section className="py-16 bg-hero-gradient">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative py-12 bg-hero-gradient overflow-hidden">
+        <div className="absolute inset-0 bg-background/60"></div>
+        <div className="absolute right-0 top-0 w-1/3 h-full opacity-20 bg-cover bg-center" 
+             style={{ backgroundImage: `url(${contactoHero})` }}></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Contacto
           </h1>
