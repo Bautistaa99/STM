@@ -7,17 +7,6 @@ import Footer from "@/components/Footer";
 import { Package, Filter } from "lucide-react";
 import productosHero from "@/assets/productos-hero.jpg";
 
-// Product images imports
-import alpisteImg from "@/assets/products/alpiste.png";
-import arrozPartidoImg from "@/assets/products/arroz-partido.png";
-import mezclCanarioImg from "@/assets/products/mezcla-canario.png";
-import mezclCardenalImg from "@/assets/products/mezcla-cardenal.png";
-import mezclHamsterImg from "@/assets/products/mezcla-hamster.png";
-import mezclGallinaImg from "@/assets/products/mezcla-gallina.png";
-import mijoImg from "@/assets/products/mijo.png";
-import quebradoFinoImg from "@/assets/products/quebrado-fino.png";
-import quebradoGruesoImg from "@/assets/products/quebrado-grueso.png";
-
 const Productos = () => {
   const [selectedCategory, setSelectedCategory] = useState("todos");
 
@@ -34,41 +23,41 @@ const Productos = () => {
 
   const products = [
     // Gallinas
-    { category: "gallinas", name: "GALL. ESP x 24 kg", description: "Alimento especializado para gallinas ponedoras", image: mezclGallinaImg },
-    { category: "gallinas", name: "GALL. ESP x 40 kg", description: "Alimento especializado para gallinas ponedoras", image: mezclGallinaImg },
-    { category: "gallinas", name: "GALL. C/PO x 24 kg", description: "Alimento para gallinas con postura", image: mezclGallinaImg },
-    { category: "gallinas", name: "GALL. C/PO x 40 kg", description: "Alimento para gallinas con postura", image: mezclGallinaImg },
+    { category: "gallinas", name: "GALL. ESP x 24 kg", description: "Alimento especializado para gallinas ponedoras" },
+    { category: "gallinas", name: "GALL. ESP x 40 kg", description: "Alimento especializado para gallinas ponedoras" },
+    { category: "gallinas", name: "GALL. C/PO x 24 kg", description: "Alimento para gallinas con postura" },
+    { category: "gallinas", name: "GALL. C/PO x 40 kg", description: "Alimento para gallinas con postura" },
     
     // Granza
-    { category: "granza", name: "GRANZA x 24 kg", description: "Granza premium para alimentación animal", image: quebradoGruesoImg },
-    { category: "granza", name: "GRANZA x 40 kg", description: "Granza premium para alimentación animal", image: quebradoGruesoImg },
-    { category: "granza", name: "GRANZIN x 24 kg", description: "Granza fina para aves pequeñas", image: quebradoFinoImg },
-    { category: "granza", name: "GRANZIN x 40 kg", description: "Granza fina para aves pequeñas", image: quebradoFinoImg },
+    { category: "granza", name: "GRANZA x 24 kg", description: "Granza premium para alimentación animal" },
+    { category: "granza", name: "GRANZA x 40 kg", description: "Granza premium para alimentación animal" },
+    { category: "granza", name: "GRANZIN x 24 kg", description: "Granza fina para aves pequeñas" },
+    { category: "granza", name: "GRANZIN x 40 kg", description: "Granza fina para aves pequeñas" },
     
     // Mezcla
     { category: "mezcla", name: "MEZCLA p/CHANCHO 30 kg", description: "Mezcla nutritiva especial para cerdos" },
     
     // Aves pequeñas
-    { category: "aves", name: "CANARIO c/Vit. 10 kg", description: "Alimento vitaminado para canarios", image: mezclCanarioImg },
-    { category: "aves", name: "CANARIO c/Vit. 30 kg", description: "Alimento vitaminado para canarios", image: mezclCanarioImg },
-    { category: "aves", name: "CARDENAL x 10 kg", description: "Alimento especializado para cardenales", image: mezclCardenalImg },
-    { category: "aves", name: "CARDENAL x 30 kg", description: "Alimento especializado para cardenales", image: mezclCardenalImg },
+    { category: "aves", name: "CANARIO c/Vit. 10 kg", description: "Alimento vitaminado para canarios" },
+    { category: "aves", name: "CANARIO c/Vit. 30 kg", description: "Alimento vitaminado para canarios" },
+    { category: "aves", name: "CARDENAL x 10 kg", description: "Alimento especializado para cardenales" },
+    { category: "aves", name: "CARDENAL x 30 kg", description: "Alimento especializado para cardenales" },
     { category: "aves", name: "PAJARO c/Vit 10 kg", description: "Alimento vitaminado para pájaros" },
     { category: "aves", name: "PAJARO c/Vit 30 kg", description: "Alimento vitaminado para pájaros" },
     
     // Semillas
-    { category: "semillas", name: "ALPISTE x 10 kg", description: "Alpiste premium para aves", image: alpisteImg },
-    { category: "semillas", name: "ALPISTE x 30 kg", description: "Alpiste premium para aves", image: alpisteImg },
-    { category: "semillas", name: "MIJO X 10 kg", description: "Mijo de alta calidad", image: mijoImg },
-    { category: "semillas", name: "MIJO X 30 kg", description: "Mijo de alta calidad", image: mijoImg },
+    { category: "semillas", name: "ALPISTE x 10 kg", description: "Alpiste premium para aves" },
+    { category: "semillas", name: "ALPISTE x 30 kg", description: "Alpiste premium para aves" },
+    { category: "semillas", name: "MIJO X 10 kg", description: "Mijo de alta calidad" },
+    { category: "semillas", name: "MIJO X 30 kg", description: "Mijo de alta calidad" },
     
     // Arroz
-    { category: "arroz", name: "ARROZ PARTIDO 30 kg", description: "Arroz partido para uso industrial", image: arrozPartidoImg },
+    { category: "arroz", name: "ARROZ PARTIDO 30 kg", description: "Arroz partido para uso industrial" },
     { category: "arroz", name: "ARROZ PREMIUM x 15 kg", description: "Arroz premium marca Gran Campeón", featured: true },
     { category: "arroz", name: "ARROZ TRADICIONAL x 15 kg", description: "Arroz tradicional marca Gran Campeón", featured: true },
     
     // Otros
-    { category: "otros", name: "MEZCLA p/HAMSTER 10 kg", description: "Mezcla nutritiva para hamsters", image: mezclHamsterImg },
+    { category: "otros", name: "MEZCLA p/HAMSTER 10 kg", description: "Mezcla nutritiva para hamsters" },
     { category: "otros", name: "PISINGALLO 25 kg", description: "Maíz pisingallo de primera calidad" },
     { category: "otros", name: "COLZA 10 kg", description: "Semilla de colza premium" },
     { category: "otros", name: "LINO 10 kg", description: "Semilla de lino de alta calidad" },
@@ -148,18 +137,10 @@ const Productos = () => {
               <Card key={index} className="hover:shadow-card transition-all duration-300 hover:-translate-y-1">
                 <CardContent className="p-6">
                   <div className="aspect-square mb-4 overflow-hidden rounded-lg bg-accent/50 border-2 border-dashed border-muted-foreground/20 flex items-center justify-center">
-                    {product.image ? (
-                      <img 
-                        src={product.image} 
-                        alt={product.name}
-                        className="w-full h-full object-cover"
-                      />
-                    ) : (
-                      <div className="text-center">
-                        <Package className="h-12 w-12 text-muted-foreground/40 mx-auto mb-2" />
-                        <span className="text-xs text-muted-foreground/60">Imagen del producto</span>
-                      </div>
-                    )}
+                    <div className="text-center">
+                      <Package className="h-12 w-12 text-muted-foreground/40 mx-auto mb-2" />
+                      <span className="text-xs text-muted-foreground/60">Imagen del producto</span>
+                    </div>
                   </div>
                   
                   <div className="flex items-center justify-between mb-4">
