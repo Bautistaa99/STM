@@ -1,14 +1,47 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Package, Filter } from "lucide-react";
+import { Package, Filter, Search } from "lucide-react";
 import productosHero from "@/assets/productos-hero.jpg";
 
+// arriba del archivo
+import alpiste30kg from "@/assets/productos/alpiste30kg.jpg";
+import canario30kg from "@/assets/productos/canario30kg.jpg";
+import cardenal30kg from "@/assets/productos/cardenal30kg.jpg";
+import gallina30kg from "@/assets/productos/gallina30kg.jpg";
+import hamster from "@/assets/productos/hamster30kg.jpg";
+import mijo30kg from "@/assets/productos/mijo30kg.jpg";
+import partido30kg from "@/assets/productos/partido30kg.jpg";
+import quebradoFino30kg from "@/assets/productos/quebradoFino30kg.jpg";
+import quebradoGrueso30kg from "@/assets/productos/quebradoGrueso30kg.jpg";
+import fideos from "@/assets/productos/cocktail.png";
+import tradicional from "@/assets/productos/tradicional.png";
+import premium from "@/assets/productos/premium.png";
+import avena from "@/assets/productos/granel/avena.png";
+import colza from "@/assets/productos/granel/colza.png";
+import girasol from "@/assets/productos/granel/girasol.png";
+import maiz from "@/assets/productos/granel/maiz.png";
+import lino from "@/assets/productos/granel/lino.png";
+
+// Fallback de imágenes por categoría
+const imagesByCategory: Record<string, string> = {
+  gallinas: gallina30kg ,
+  granza: alpiste30kg ,
+  aves: alpiste30kg ,
+  semillas: mijo30kg ,
+  arroz: premium ,
+  otros: tradicional ,
+};
+
 const Productos = () => {
+  
   const [selectedCategory, setSelectedCategory] = useState("todos");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const categories = [
     { id: "todos", name: "Todos los Productos", icon: "🌾" },
@@ -22,58 +55,57 @@ const Productos = () => {
   ];
 
   const products = [
-    // Gallinas
-    { category: "gallinas", name: "GALL. ESP x 24 kg", description: "Alimento especializado para gallinas ponedoras" },
-    { category: "gallinas", name: "GALL. ESP x 40 kg", description: "Alimento especializado para gallinas ponedoras" },
-    { category: "gallinas", name: "GALL. C/PO x 24 kg", description: "Alimento para gallinas con postura" },
-    { category: "gallinas", name: "GALL. C/PO x 40 kg", description: "Alimento para gallinas con postura" },
-    
-    // Granza
-    { category: "granza", name: "GRANZA x 24 kg", description: "Granza premium para alimentación animal" },
-    { category: "granza", name: "GRANZA x 40 kg", description: "Granza premium para alimentación animal" },
-    { category: "granza", name: "GRANZIN x 24 kg", description: "Granza fina para aves pequeñas" },
-    { category: "granza", name: "GRANZIN x 40 kg", description: "Granza fina para aves pequeñas" },
-    
-    // Mezcla
-    { category: "mezcla", name: "MEZCLA p/CHANCHO 30 kg", description: "Mezcla nutritiva especial para cerdos" },
-    
-    // Aves pequeñas
-    { category: "aves", name: "CANARIO c/Vit. 10 kg", description: "Alimento vitaminado para canarios" },
-    { category: "aves", name: "CANARIO c/Vit. 30 kg", description: "Alimento vitaminado para canarios" },
-    { category: "aves", name: "CARDENAL x 10 kg", description: "Alimento especializado para cardenales" },
-    { category: "aves", name: "CARDENAL x 30 kg", description: "Alimento especializado para cardenales" },
-    { category: "aves", name: "PAJARO c/Vit 10 kg", description: "Alimento vitaminado para pájaros" },
-    { category: "aves", name: "PAJARO c/Vit 30 kg", description: "Alimento vitaminado para pájaros" },
-    
-    // Semillas
-    { category: "semillas", name: "ALPISTE x 10 kg", description: "Alpiste premium para aves" },
-    { category: "semillas", name: "ALPISTE x 30 kg", description: "Alpiste premium para aves" },
-    { category: "semillas", name: "MIJO X 10 kg", description: "Mijo de alta calidad" },
-    { category: "semillas", name: "MIJO X 30 kg", description: "Mijo de alta calidad" },
+    //OTROS
+    { id:"fideos-cocktail", category: "otros", name: "FIDEOS COCKTAIL", description: "Fideos cocktail para distribución",weight: "10 kg", featured: true, image: fideos },
     
     // Arroz
-    { category: "arroz", name: "ARROZ PARTIDO 30 kg", description: "Arroz partido para uso industrial" },
-    { category: "arroz", name: "ARROZ PREMIUM x 15 kg", description: "Arroz premium marca Gran Campeón", featured: true },
-    { category: "arroz", name: "ARROZ TRADICIONAL x 15 kg", description: "Arroz tradicional marca Gran Campeón", featured: true },
+    { id:"arroz-premium", category: "arroz", name: "ARROZ PREMIUM", description: "Arroz premium marca Gran Campeón",weight: "15 kg", featured: true, image: premium },
+    { id:"arroz-tradicional", category: "arroz", name: "ARROZ TRADICIONAL", description: "Arroz tradicional marca Gran Campeón",weight: "15 kg", featured: true, image: tradicional },
+        
+    // Arroz
+    { id:"arroz-partido", category: "arroz", name: "ARROZ PARTIDO", description: "Arroz partido para uso industrial", weight: "30 kg", image: partido30kg},
     
+    // Gallinas
+    { id:"mezcla-gallina", category: "gallinas", name: "GALL. ESP", description: "Alimento especializado para gallinas ponedoras",weight: "24 kg | 40 kg", image: gallina30kg  },
+    { id:"mezcla-gallina-ponedora", category: "gallinas", name: "GALL. C/PO", description: "Alimento para gallinas con postura",weight:"24 kg | 40 kg" },
+    
+    // Mezcla
+    // { category: "mezcla", name: "MEZCLA p/CHANCHO", description: "Mezcla nutritiva especial para cerdos",weight: "30kg"  },
+    
+    // Granza
+    { id:"granza" ,category: "granza", name: "GRANZA", description: "Granza premium para alimentación animal",weight:"24 kg | 40 kg", image: quebradoFino30kg  },
+    { id:"granzin" ,category: "granza", name: "GRANZIN", description: "Granza fina para aves pequeñas",weight:"24 kg | 40 kg", image: quebradoGrueso30kg },
+    
+    // Aves pequeñas
+    { id:"mezcla-canario" ,category: "aves", name: "CANARIO c/Vit.", description: "Alimento vitaminado para canarios",weight:"10kg | 30kg", image: canario30kg },
+    { id:"mezcla-cardenal" ,category: "aves", name: "CARDENAL x", description: "Alimento especializado para cardenales",weight:"10kg | 30kg", image: cardenal30kg },
+    { id:"mezcla-pajaro" ,category: "aves", name: "PAJARO c/Vit", description: "Alimento vitaminado para pájaros",weight:"10kg | 30kg", image: alpiste30kg },
+    
+    // Semillas
+    { id:"alpiste" ,category: "semillas", name: "ALPISTE", description: "Alpiste premium para aves",weight:"10kg | 30kg", image: alpiste30kg },
+    { id:"mijo" ,category: "semillas", name: "MIJO", description: "Mijo de alta calidad",weight:"10kg | 30kg" },
+    
+
     // Otros
-    { category: "otros", name: "MEZCLA p/HAMSTER 10 kg", description: "Mezcla nutritiva para hamsters" },
-    { category: "otros", name: "PISINGALLO 25 kg", description: "Maíz pisingallo de primera calidad" },
-    { category: "otros", name: "COLZA 10 kg", description: "Semilla de colza premium" },
-    { category: "otros", name: "LINO 10 kg", description: "Semilla de lino de alta calidad" },
-    { category: "otros", name: "AVENA PELADA 10 kg", description: "Avena pelada para alimentación" },
-    { category: "otros", name: "GIRASOL CONFITERO 10 kg", description: "Semillas de girasol confitero" },
-    { category: "otros", name: "FIDEOS COCKTAIL 10 kg", description: "Fideos cocktail para distribución", featured: true },
+    { id:"mezcla-hamster" ,category: "otros", name: "MEZCLA p/HAMSTER", description: "Mezcla nutritiva para hamsters",weight:"10kg", image: hamster },
+    { id:"maiz-pisingallo" ,category: "otros", name: "MAIZ PISINGALLO", description: "Maíz pisingallo de primera calidad",weight:"25kg", image: maiz },
+    { id:"colza" ,category: "otros", name: "COLZA", description: "Semilla de colza premium",weight:"10kg", image: colza },
+    { id:"lino" ,category: "otros", name: "LINO", description: "Semilla de lino de alta calidad",weight:"10kg", image: lino  },
+    { id:"avena-pelada" ,category: "otros", name: "AVENA PELADA", description: "Avena pelada para alimentación",weight:"10kg", image: avena  },
+    { id:"girasol-confitero" ,category: "otros", name: "GIRASOL CONFITERO", description: "Semillas de girasol confitero",weight:"10kg", image: girasol  },
   ];
 
-  const filteredProducts = selectedCategory === "todos" 
-    ? products 
-    : products.filter(product => product.category === selectedCategory);
+  const filteredProducts = products.filter(product => {
+    const matchesCategory = selectedCategory === "todos" || product.category === selectedCategory;
+    const matchesSearch = searchTerm === "" || 
+      product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      product.description.toLowerCase().includes(searchTerm.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
 
   const getCategoryIcon = (categoryId: string) => {
     return categories.find(cat => cat.id === categoryId)?.icon || "📦";
   };
-
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -81,21 +113,23 @@ const Productos = () => {
       {/* Header */}
       <section className="relative py-12 bg-hero-gradient overflow-hidden">
         <div className="absolute inset-0 bg-background/60"></div>
-        <div className="absolute right-0 top-0 w-1/3 h-full opacity-20 bg-cover bg-center" 
+        <div className="absolute inset-0 w-full h-full opacity-20 bg-cover bg-center"  
              style={{ backgroundImage: `url(${productosHero})` }}></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
             Nuestros Productos
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-foreground max-w-2xl mx-auto">
             Amplio catálogo de productos agroalimenticios de alta calidad para diferentes necesidades
           </p>
         </div>
       </section>
 
-      {/* Category Filter */}
       <section className="py-8 border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          
+          {/* Category Filter */}
           <div className="flex items-center mb-6">
             <Filter className="h-5 w-5 text-muted-foreground mr-2" />
             <span className="text-sm font-medium text-muted-foreground">Filtrar por categoría:</span>
@@ -113,6 +147,21 @@ const Productos = () => {
                 {category.name}
               </Button>
             ))}
+          </div>
+
+          {/* Search Bar */}
+          <div className="flex items-center mb-6 mt-10">
+            <Search className="h-5 w-5 text-muted-foreground mr-2" />
+            <span className="text-sm font-medium text-muted-foreground mr-4">Buscar productos:</span>
+            <div className="relative flex-1 max-w-md">
+              <Input
+                type="text"
+                placeholder="Buscar por nombre o descripción..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="pl-4"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -134,13 +183,17 @@ const Productos = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredProducts.map((product, index) => (
-              <Card key={index} className="hover:shadow-card transition-all duration-300 hover:-translate-y-1">
+              <Link key={index} to={`/productos/${product.id}`} onClick={() => window.scrollTo({ top: 0})}>
+              <Card id={product.id} className="hover:shadow-card transition-all duration-300 hover:-translate-y-1">
                 <CardContent className="p-6">
-                  <div className="aspect-square mb-4 overflow-hidden rounded-lg bg-accent/50 border-2 border-dashed border-muted-foreground/20 flex items-center justify-center">
-                    <div className="text-center">
-                      <Package className="h-12 w-12 text-muted-foreground/40 mx-auto mb-2" />
-                      <span className="text-xs text-muted-foreground/60">Imagen del producto</span>
-                    </div>
+                  {/* Imagen del producto */}
+                  <div className="aspect-square mb-4 overflow-hidden rounded-lg flex justify-center">
+                    <img
+                      src={product.image ?? imagesByCategory[product.category] ?? "/images/products/fallback.jpg"}
+                      alt={product.name}
+                      className="h-full w-auto"
+                      loading="lazy"
+                    />
                   </div>
                   
                   <div className="flex items-center justify-between mb-4">
@@ -157,15 +210,24 @@ const Productos = () => {
                   <h3 className="font-semibold text-lg mb-2 text-foreground">
                     {product.name}
                   </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
+                  <p className="text-sm text-muted-foreground mb-4 min-h-[36px]">
                     {product.description}
                   </p>
                   
-                  <div className="flex items-center justify-end">
-                    <Package className="h-4 w-4 text-muted-foreground" />
+                  <div>
+                    <p className="text-sm">Presentaciones: {product.weight}</p>
+                  </div>
+
+                  <div className="mt-5 flex align-bottom">
+                  
+                  <Button className="w-full">
+                    Ver detalle
+                  </Button>
+
                   </div>
                 </CardContent>
               </Card>
+              </Link>
             ))}
           </div>
 

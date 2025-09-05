@@ -46,7 +46,7 @@ const Contacto = () => {
     });
   };
 
-  const whatsappNumber = "5491123456789"; // Número de ejemplo
+  const whatsappNumber = "5491141746937"; // Número de ejemplo
   const whatsappMessage = "Hola! Me interesa conocer más sobre los productos de STM.";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -57,13 +57,13 @@ const Contacto = () => {
       {/* Header */}
       <section className="relative py-12 bg-hero-gradient overflow-hidden">
         <div className="absolute inset-0 bg-background/60"></div>
-        <div className="absolute right-0 top-0 w-1/3 h-full opacity-20 bg-cover bg-center" 
+        <div className="absolute inset-0 w-full h-full opacity-20 bg-cover bg-center" 
              style={{ backgroundImage: `url(${contactoHero})` }}></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
             Contacto
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-foreground max-w-2xl mx-auto">
             Estamos aquí para ayudarte. Contactanos para consultas, presupuestos o más información
           </p>
         </div>
@@ -98,26 +98,26 @@ const Contacto = () => {
                         />
                       </div>
                       <div>
-                        <Label htmlFor="email">Email *</Label>
+                        <Label htmlFor="email">Email</Label>
                         <Input
                           id="email"
                           name="email"
                           type="email"
-                          required
                           value={formData.email}
                           onChange={handleChange}
-                          placeholder="tu@email.com"
+                          placeholder="tu@email.com (opcional)"
                         />
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <Label htmlFor="telefono">Teléfono</Label>
+                        <Label htmlFor="telefono">Teléfono *</Label>
                         <Input
                           id="telefono"
                           name="telefono"
                           type="tel"
+                          required
                           value={formData.telefono}
                           onChange={handleChange}
                           placeholder="+54 9 11 1234-5678"
@@ -164,7 +164,7 @@ const Contacto = () => {
               {/* WhatsApp Contact */}
               <Card className="border-primary/20">
                 <CardContent className="p-6">
-                  <div className="flex items-start space-x-4">
+                  <div className="flex sm:flex-col items-start space-x-4 ">
                     <div className="bg-green-100 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
                       <MessageCircle className="h-6 w-6 text-green-600" />
                     </div>
@@ -195,11 +195,14 @@ const Contacto = () => {
                       <MapPin className="h-6 w-6 text-primary" />
                     </div>
                     <div>
+                      <a href="https://maps.app.goo.gl/V3XSnej3KfpXXrmH6">
+
                       <h3 className="font-semibold mb-1">Ubicación</h3>
                       <p className="text-muted-foreground">
                         Álvarez, Santa Fe<br />
                         (Al lado de Rosario)
                       </p>
+                      </a>
                     </div>
                   </div>
 
@@ -208,10 +211,12 @@ const Contacto = () => {
                       <Phone className="h-6 w-6 text-primary" />
                     </div>
                     <div>
+                      <a href="tel:5491141746937">
                       <h3 className="font-semibold mb-1">Teléfono</h3>
                       <p className="text-muted-foreground">
-                        +54 9 11 1234-5678
+                        +54 9 11 4174-6937
                       </p>
+                      </a>
                     </div>
                   </div>
 

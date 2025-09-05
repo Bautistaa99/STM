@@ -20,15 +20,20 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4" />
+                <a href="https://maps.app.goo.gl/V3XSnej3KfpXXrmH6">
                 <span className="text-sm text-primary-foreground/80">
                   Álvarez, Santa Fe
                 </span>
+                </a>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
+                <a href="tel:5491141746937">
+
                 <span className="text-sm text-primary-foreground/80">
-                  +54 9 11 1234-5678
+                  +54 9 11 4174-69337
                 </span>
+                </a>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4" />
@@ -43,18 +48,26 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Enlaces Rápidos</h3>
             <div className="space-y-2">
+              <a href="/productos">
               <p className="text-sm text-primary-foreground/80">
                 • Productos
               </p>
+              </a>
+              <a href="/nosotros">
               <p className="text-sm text-primary-foreground/80">
                 • Quiénes Somos
               </p>
+              </a>
+              <a href="/contacto">
               <p className="text-sm text-primary-foreground/80">
                 • Contacto
               </p>
+              </a>
+              <a href="ubicacion">
               <p className="text-sm text-primary-foreground/80">
                 • Ubicación
               </p>
+              </a>
             </div>
           </div>
         </div>

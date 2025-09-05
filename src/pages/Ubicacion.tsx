@@ -13,7 +13,7 @@ const Ubicacion = () => {
       {/* Header */}
       <section className="relative py-12 bg-hero-gradient overflow-hidden">
         <div className="absolute inset-0 bg-background/60"></div>
-        <div className="absolute right-0 top-0 w-1/3 h-full opacity-20 bg-cover bg-center" 
+        <div className="absolute inset-0 w-full h-full opacity-20 bg-cover bg-center" 
              style={{ backgroundImage: `url(${ubicacionHero})` }}></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -37,7 +37,7 @@ const Ubicacion = () => {
               <p className="text-lg text-muted-foreground mb-8">
                 Estamos ubicados en Álvarez, una localidad estratégicamente posicionada 
                 muy cerca de Rosario, lo que nos permite brindar un servicio eficiente 
-                a toda la zona metropolitana y localidades vecinas.
+                en todo el pais
               </p>
 
               <div className="space-y-6">
@@ -47,10 +47,12 @@ const Ubicacion = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-2">Dirección</h3>
+                    <a href="https://maps.app.goo.gl/V3XSnej3KfpXXrmH6">
                     <p className="text-muted-foreground">
                       Álvarez, Santa Fe<br />
                       República Argentina
                     </p>
+                    </a>
                   </div>
                 </div>
 
@@ -161,13 +163,12 @@ const Ubicacion = () => {
           {/* Nearby Cities */}
           <div className="bg-accent/20 rounded-lg p-8">
             <h2 className="text-2xl font-bold text-foreground text-center mb-6">
-              Principales Localidades que Atendemos
+              Principales Ciudades que Atendemos
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 text-center">
               {[
-                "Rosario", "Villa Gobernador Gálvez", "Funes", "Roldán", 
-                "Capitán Bermúdez", "San Lorenzo", "Puerto General San Martín",
-                "Pérez", "Casilda", "Soldini", "Piñero", "Granadero Baigorria"
+                "Gran Buenos Aires", "Rosario", "Ciudad de Santa Fe", "La Plata", 
+                "Jujuy", "San Rafael (Mendoza)"
               ].map((city, index) => (
                 <div key={index} className="bg-card rounded-lg p-3">
                   <p className="text-sm font-medium text-foreground">{city}</p>

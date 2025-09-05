@@ -5,31 +5,37 @@ import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { ArrowRight, Star, Truck, Shield, Wheat } from "lucide-react";
 import heroImage from "@/assets/hero-agro.jpg";
-import riceImage from "@/assets/rice-premium.jpg";
-import chickenFeedImage from "@/assets/chicken-feed.jpg";
-import fideosImage from "@/assets/fideos.jpg";
+import riceImage from "@/assets/productos/tradicional.png";
+import chickenFeedImage from "@/assets/productos/mezcla.png";
+import fideosImage from "@/assets/productos/cocktail.png";
+import ricePremium from "@/assets/productos/premium.png";
+
 
 const Index = () => {
   const featuredProducts = [
     {
+      id:"arroz-premium",
       name: "Arroz Premium x 15 kg",
       brand: "Gran Campeón",
-      image: riceImage,
+      image: ricePremium,
       description: "Arroz de máxima calidad para consumo familiar"
     },
     {
+      id:"arroz-tradicional",
       name: "Arroz Tradicional x 15 kg", 
       brand: "Gran Campeón",
       image: riceImage,
       description: "La opción confiable de siempre para tu mesa"
     },
     {
+      id:"fideos-cocktail",
       name: "Fideos Cocktail x 10 kg",
-      brand: "STM",
+      brand: "Gran Campeón",
       image: fideosImage,
       description: "Fideos premium para distribuidores y comercios"
     },
     {
+      id:"arroz-partido",
       name: "Alimento para Gallinas",
       brand: "STM",
       image: chickenFeedImage,
@@ -50,23 +56,22 @@ const Index = () => {
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 ">
             STM
           </h1>
           <p className="text-xl md:text-2xl mb-8 font-light">
             Productos Agroalimenticios de Calidad
           </p>
           <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Proveemos alimentos balanceados y productos agroalimenticios a consumidores,
-            distribuidores y comercios de Álvarez, Santa Fe y la zona de Rosario.
+            Proveemos alimentos balanceados y productos agroalimenticios <br/> a distribuidores de todo el pais.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/80 font-bold duration-1000">
               <Link to="/productos">
                 Ver Productos <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+            <Button asChild variant="outline" size="lg" className="border-white text-primary font-bold hover:bg-white/80 hover:text-primary duration-1000">
               <Link to="/contacto">
                 Contactanos
               </Link>
@@ -89,13 +94,14 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {featuredProducts.map((product, index) => (
-              <Card key={index} className="hover:shadow-card transition-all duration-300 hover:-translate-y-1">
+              <Link key={index} to={`/productos/${product.id}`} onClick={() => window.scrollTo({ top: 0})}>
+              <Card className="hover:shadow-card transition-all duration-300 hover:-translate-y-1">
                 <CardContent className="p-6">
-                  <div className="aspect-square mb-4 overflow-hidden rounded-lg bg-accent">
+                  <div className="aspect-square mb-4 overflow-hidden rounded-lg bg-white flex justify-center">
                     <img 
                       src={product.image} 
                       alt={product.name}
-                      className="w-full h-full object-cover"
+                      className="w-auto h-full"
                     />
                   </div>
                   <div className="flex items-center mb-2">
@@ -105,8 +111,12 @@ const Index = () => {
                   <h3 className="font-semibold text-lg mb-2">{product.name}</h3>
                   <p className="text-sm text-primary font-medium mb-2">{product.brand}</p>
                   <p className="text-sm text-muted-foreground">{product.description}</p>
+                  <Button className="w-full mt-5">
+                    Ver detalle
+                  </Button>
                 </CardContent>
               </Card>
+              </Link>
             ))}
           </div>
           
@@ -166,16 +176,16 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             ¿Necesitás productos agroalimenticios de calidad?
           </h2>
-          <p className="text-xl mb-8 text-primary-foreground/90">
+          <p className="text-xl mb-8">
             Contactanos para conocer nuestros productos y precios especiales para mayoristas
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" variant="secondary">
-              <Link to="/contacto">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center ">
+            <Button asChild size="lg" variant="outline" className="text-primary font-bold">
+              <Link to="/contacto" >
                 Solicitar Presupuesto
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
+            <Button asChild size="lg" variant="outline" className="border-primary-foreground text-primary font-bold hover:font-primary">
               <Link to="/productos">
                 Ver Catálogo Completo
               </Link>

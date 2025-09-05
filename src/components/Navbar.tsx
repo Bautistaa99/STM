@@ -23,7 +23,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2" onClick={() => window.scrollTo({ top: 0})}>
             <div className="text-2xl font-bold bg-primary-gradient bg-clip-text text-transparent">
               STM
             </div>
@@ -36,6 +36,7 @@ const Navbar = () => {
           <div className="hidden md:flex space-x-8">
             {navigation.map((item) => (
               <Link
+                onClick={() => window.scrollTo({ top: 0})}
                 key={item.name}
                 to={item.href}
                 className={`text-sm font-medium transition-colors duration-200 ${

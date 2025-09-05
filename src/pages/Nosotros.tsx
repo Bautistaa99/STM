@@ -12,13 +12,13 @@ const Nosotros = () => {
       {/* Header */}
       <section className="relative py-12 bg-hero-gradient overflow-hidden">
         <div className="absolute inset-0 bg-background/60"></div>
-        <div className="absolute right-0 top-0 w-1/3 h-full opacity-20 bg-cover bg-center" 
+        <div className="absolute inset-0 w-full h-full opacity-20 bg-cover bg-center"
              style={{ backgroundImage: `url(${nosotrosHero})` }}></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-black">
             Quiénes Somos
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-foreground max-w-2xl mx-auto">
             Conocé más sobre STM, nuestra historia y nuestro compromiso con la calidad
           </p>
         </div>
@@ -29,7 +29,7 @@ const Nosotros = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-foreground mb-6">
-              STM - Productos Agroalimenticios
+              <span className="text-primary">STM</span> - Productos Agroalimenticios
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               STM es una empresa familiar dedicada a la comercialización de productos agroalimenticios 
@@ -145,7 +145,7 @@ const Nosotros = () => {
                     <h3 className="text-lg font-semibold mb-2">Área de Servicio</h3>
                     <p className="text-muted-foreground">
                       Atendemos a consumidores particulares, distribuidores y comercios 
-                      en Rosario y toda la zona de influencia, ofreciendo un servicio 
+                      en tod el pais, ofreciendo un servicio 
                       personalizado y adaptado a cada tipo de cliente.
                     </p>
                   </div>
@@ -185,7 +185,7 @@ const Nosotros = () => {
                 <li className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <span className="text-muted-foreground">
-                    Entrega confiable en la región de Rosario y alrededores
+                    Entrega confiable en todo el pais.
                   </span>
                 </li>
               </ul>
