@@ -163,15 +163,15 @@ const ProductDetail = () => {
 
             {/* Product Info */}
             <div>
-              <div className="space-y-6">
-                <div>
+              <div className="flex flex-col space-y-6">
+                <div  className="order-2 lg:order-1">
                   <h2 className="text-xl font-semibold text-foreground mb-3">Descripción</h2>
                   <p className="text-muted-foreground leading-relaxed">
                     {product.description}
                   </p>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-4 order-3 lg:order-2">
                   <Card>
                     <CardContent className="p-4">
                       <div className="flex items-center gap-2 mb-2">
@@ -193,7 +193,7 @@ const ProductDetail = () => {
                   </Card>
                 </div>
 
-                <div className="border-t pt-6">
+                <div className="border-t pt-6 order-1 lg:order-3">
                   <h3 className="text-lg font-semibold text-foreground mb-4">
                     ¿Interesado en este producto?
                   </h3>
