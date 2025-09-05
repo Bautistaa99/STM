@@ -69,8 +69,9 @@ const ProductDetail = () => {
     {presentation:"Bolsa", id:"arroz-partido", category: "arroz", name: "ARROZ PARTIDO", description: "Arroz partido para uso industrial", weight: "30 kg", image: partido30kg},
     
     // Gallinas
-    {presentation:"Bolsa", id:"mezcla-gallina", category: "gallinas", name: "GALL. ESP", description: "Alimento especializado para gallinas ponedoras",weight: "24 kg | 40 kg", image: gallina30kg  },
-    {presentation:"Bolsa", id:"mezcla-gallina-ponedora", category: "gallinas", name: "GALL. C/PO", description: "Alimento para gallinas con postura",weight:"24 kg | 40 kg" },
+    // {presentation:"Bolsa", id:"mezcla-gallina", category: "gallinas", name: "GALL. ESP", description: "Alimento especializado para gallinas ponedoras",weight: "24 kg | 40 kg", image: gallina30kg  },
+    // {presentation:"Bolsa", id:"mezcla-gallina-ponedora", category: "gallinas", name: "GALL. C/PO", description: "Alimento para gallinas con postura",weight:"24 kg | 40 kg" },
+        {presentation:"Bolsa", id:"mezcla-gallina-ponedora", category: "gallinas", name: "Mezcla Gallina", description: "Alimento para gallinas con postura",weight:"24 kg | 40 kg" },
     
     // Mezcla
     // {presentation:"bolsa", category: "mezcla", name: "MEZCLA p/CHANCHO", description: "Mezcla nutritiva especial para cerdos",weight: "30kg"  },
@@ -140,11 +141,11 @@ const ProductDetail = () => {
       </section>
 
       {/* Product Detail Content */}
-      <section className="py-12">
+      <section className="py-4">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Product Image */}
-            <div className="order-2 lg:order-1">
+            <div>
               <Card>
                 <CardContent className="p-8">
                   {/* Imagen del producto */}
@@ -161,7 +162,7 @@ const ProductDetail = () => {
             </div>
 
             {/* Product Info */}
-            <div className="order-1 lg:order-2">
+            <div>
               <div className="space-y-6">
                 <div>
                   <h2 className="text-xl font-semibold text-foreground mb-3">Descripción</h2>

@@ -81,8 +81,9 @@ const Productos = () => {
     { id:"arroz-partido", category: "arroz", name: "ARROZ PARTIDO", description: "Arroz partido para uso industrial", weight: "30 kg", image: partido30kg},
     
     // Gallinas
-    { id:"mezcla-gallina", category: "balanceado", name: "GALL. ESP", description: "Alimento especializado para gallinas ponedoras",weight: "24 kg | 40 kg", image: gallina30kg  },
-    { id:"mezcla-gallina-ponedora", category: "balanceado", name: "GALL. C/PO", description: "Alimento para gallinas con postura",weight:"24 kg | 40 kg", image: gallina30kg },
+    // { id:"mezcla-gallina", category: "balanceado", name: "GALL. ESP", description: "Alimento especializado para gallinas ponedoras",weight: "24 kg | 40 kg", image: gallina30kg  },
+    // { id:"mezcla-gallina-ponedora", category: "balanceado", name: "GALL. C/PO", description: "Alimento para gallinas con postura",weight:"24 kg | 40 kg", image: gallina30kg },
+        { id:"mezcla-gallina-ponedora", category: "balanceado", name: "Mezcla Gallina", description: "Alimento para gallinas con postura",weight:"24 kg | 40 kg", image: gallina30kg },
     
     // Mezcla
     // { category: "mezcla", name: "MEZCLA p/CHANCHO", description: "Mezcla nutritiva especial para cerdos",weight: "30kg"  },
