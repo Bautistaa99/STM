@@ -7,8 +7,14 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Phone, Mail, MapPin, MessageCircle, Clock, Send } from "lucide-react";
+import { Phone, Mail, MapPin, MessageCircle, Clock, Send, Loader2 } from "lucide-react";
+import emailjs from "emailjs-com";
 import contactoHero from "@/assets/contacto-hero.jpg";
+
+// EmailJS Configuration - Replace VITE_EMAILJS_PUBLIC_KEY with your actual public key
+const EMAILJS_SERVICE_ID = "service_cvii9k7";
+const EMAILJS_TEMPLATE_ID = "template_t3nzz5t";
+const EMAILJS_PUBLIC_KEY = "sR8BuHVKrNYNZ99F4";
 
 const Contacto = () => {
   const [formData, setFormData] = useState({
@@ -16,27 +22,66 @@ const Contacto = () => {
     email: "",
     telefono: "",
     empresa: "",
-    mensaje: ""
+mensaje: "",
+    website: "" // Honeypot field
   });
+  const [isSending, setIsSending] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Simular envío del formulario
-    toast({
-      title: "Mensaje enviado",
-      description: "Gracias por contactarnos. Te responderemos a la brevedad.",
-    });
+    // Check honeypot - if filled, it's likely spam
+    if (formData.website) {
+      return;
+    }
+    
+    setIsSending(true);
+    
+    try {
+      const templateParams = {
+        name: formData.nombre,
+        email: formData.email,
+        phone: formData.telefono,
+        company: formData.empresa,
+        message: formData.mensaje,
+        title: "Nuevo contacto desde stm.com.ar",
+        from_name: formData.nombre,
+        email_id: formData.email,
+        to_email: "bautistavarela@carogran.com.ar"
+      };
 
-    // Limpiar formulario
-    setFormData({
-      nombre: "",
-      email: "",
-      telefono: "",
-      empresa: "",
-      mensaje: ""
-    });
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
+
+      toast({
+        title: "Mensaje enviado exitosamente",
+        description: "Gracias por contactarnos. Te responderemos a la brevedad.",
+      });
+
+      // Limpiar formulario
+      setFormData({
+        nombre: "",
+        email: "",
+        telefono: "",
+        empresa: "",
+        mensaje: "",
+        website: ""
+      });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Error al enviar mensaje",
+        description: "Hubo un problema al enviar tu mensaje. Por favor, intenta nuevamente o contáctanos por WhatsApp.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSending(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -149,9 +194,32 @@ const Contacto = () => {
                       />
                     </div>
 
-                    <Button type="submit" className="w-full" size="lg">
-                      <Send className="mr-2 h-4 w-4" />
-                      Enviar Mensaje
+                   {/* Honeypot field - hidden from users */}
+                    <div style={{ display: 'none' }}>
+                      <Label htmlFor="website">Website</Label>
+                      <Input
+                        id="website"
+                        name="website"
+                        type="text"
+                        value={formData.website}
+                        onChange={handleChange}
+                        tabIndex={-1}
+                        autoComplete="off"
+                      />
+                    </div>
+
+                    <Button type="submit" className="w-full" size="lg" disabled={isSending}>
+                      {isSending ? (
+                        <>
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                          Enviando...
+                        </>
+                      ) : (
+                        <>
+                          <Send className="mr-2 h-4 w-4" />
+                          Enviar Mensaje
+                        </>
+                      )}
                     </Button>
                   </form>
                 </CardContent>
@@ -164,8 +232,8 @@ const Contacto = () => {
               {/* WhatsApp Contact */}
               <Card className="border-primary/20">
                 <CardContent className="p-6">
-                  <div className="flex sm:flex-col items-start space-x-4 ">
-                    <div className="bg-green-100 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="flex flex-col lg:flex-row md:flex-row  items-start lg:space-x-4 md:space-x-4 ">
+                    <div className="bg-green-100 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 mb-2 ">
                       <MessageCircle className="h-6 w-6 text-green-600" />
                     </div>
                     <div className="flex-1">

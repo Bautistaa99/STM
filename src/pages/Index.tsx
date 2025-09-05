@@ -181,7 +181,7 @@ const Index = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center ">
             <Button asChild size="lg" variant="outline" className="text-primary font-bold">
-              <Link to="/contacto" >
+              <Link to="/contacto" onClick={() => window.scrollTo({ top: 0})}>
                 Solicitar Presupuesto
               </Link>
             </Button>

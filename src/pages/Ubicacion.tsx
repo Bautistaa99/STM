@@ -16,10 +16,10 @@ const Ubicacion = () => {
         <div className="absolute inset-0 w-full h-full opacity-20 bg-cover bg-center" 
              style={{ backgroundImage: `url(${ubicacionHero})` }}></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
             Nuestra Ubicación
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-foreground max-w-2xl mx-auto">
             Encontranos en Álvarez, Santa Fe, estratégicamente ubicados cerca de Rosario
           </p>
         </div>

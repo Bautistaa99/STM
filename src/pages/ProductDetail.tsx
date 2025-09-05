@@ -1,4 +1,5 @@
-import { useParams, Link, Navigate } from "react-router-dom";
+
+import { useParams, Link, Navigate, useNavigate } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -40,7 +41,11 @@ const imagesByCategory: Record<string, string> = {
 const ProductDetail = () => {
   const { productSlug } = useParams();
 
+  const navigate = useNavigate();
 
+  const handleBackToProducts = () => {
+    navigate('/productos');
+  };
   const categories = [
     { id: "todos", name: "Todos los Productos", icon: "🌾" },
     { id: "gallinas", name: "Gallinas", icon: "🐔" },
@@ -109,13 +114,13 @@ const ProductDetail = () => {
       <section className="relative py-8 bg-hero-gradient overflow-hidden">
         <div className="absolute inset-0 bg-background/60"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<Link 
-  to="/productos"
-  className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground mb-4 transition-colors"
->
+          <button 
+            onClick={handleBackToProducts}
+            className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground mb-4 transition-colors cursor-pointer"
+          >
   <ArrowLeft className="h-4 w-4 mr-2" />
   Volver a productos
-</Link>
+          </button>
 
           <div className="flex items-center gap-3 mb-4">
             <Badge variant="outline" className="text-sm">
@@ -195,10 +200,10 @@ const ProductDetail = () => {
                     Contactanos para consultar precio, disponibilidad y condiciones especiales
                   </p>
                   <Button asChild size="lg" className="w-full">
-                    <Link to="/contacto">
+                    <a href="https://wa.me/5491141746937?text=Hola,%20queria%20solicitar%20una%20cotizacion!">
                       <ShoppingCart className="h-4 w-4 mr-2" />
                       Solicitar Cotización
-                    </Link>
+                    </a>
                   </Button>
                 </div>
               </div>
@@ -218,8 +223,8 @@ const ProductDetail = () => {
               .filter(p => p.category === product.category && p.id !== product.id)
               .slice(0, 3)
               .map((relatedProduct) => (
-                      <Link to={`/productos/${relatedProduct.id}`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-
+                
+                <Link to={`/productos/${relatedProduct.id}`} onClick={() => window.scrollTo({ top: 0})}>
                 <Card key={relatedProduct.id} className="hover:shadow-card transition-all duration-300 hover:-translate-y-1">
                   <CardContent className="p-6">
                     {/* Imagen del producto */}
@@ -244,7 +249,7 @@ const ProductDetail = () => {
                     </p>
                     
                     <Button asChild variant="outline" size="sm" className="w-full">
-                      <Link to={`/productos/${relatedProduct.id}`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                      <Link to={`/productos/${relatedProduct.id}`} onClick={() => window.scrollTo({ top: 0 })}>
                         Ver Detalle
                       </Link>
                     </Button>

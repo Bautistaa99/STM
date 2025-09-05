@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -43,38 +43,54 @@ const Productos = () => {
   const [selectedCategory, setSelectedCategory] = useState("todos");
   const [searchTerm, setSearchTerm] = useState("");
 
+
+  // Restore scroll position when coming back from product detail
+  useEffect(() => {
+    const savedScrollPosition = sessionStorage.getItem('productListScrollPosition');
+    if (savedScrollPosition) {
+      window.scrollTo(0, parseInt(savedScrollPosition));
+      sessionStorage.removeItem('productListScrollPosition');
+    }
+  }, []);
+
+  // Save scroll position when navigating to product detail
+  const handleProductClick = () => {
+    sessionStorage.setItem('productListScrollPosition', window.scrollY.toString());
+  };
+
   const categories = [
     { id: "todos", name: "Todos los Productos", icon: "🌾" },
-    { id: "gallinas", name: "Gallinas", icon: "🐔" },
-    { id: "granza", name: "Granza", icon: "🌾" },
-    { id: "mezcla", name: "Mezcla", icon: "🐖" },
+    { id: "gran-campeon", name: "Gran Campeón", icon: "🏆" },
+    { id: "balanceado", name: "Alimentos balanceados", icon: "🐖" },
     { id: "aves", name: "Aves Pequeñas", icon: "🐦" },
-    { id: "semillas", name: "Semillas", icon: "🌱" },
+    { id: "semillas-cereales", name: "Semillas y cereales", icon: "🌱" },
     { id: "arroz", name: "Arroz", icon: "🍚" },
-    { id: "otros", name: "Otros", icon: "🐹" },
+    { id: "otros", name: "Otros", icon: "" },
   ];
 
   const products = [
-    //OTROS
-    { id:"fideos-cocktail", category: "otros", name: "FIDEOS COCKTAIL", description: "Fideos cocktail para distribución",weight: "10 kg", featured: true, image: fideos },
     
     // Arroz
-    { id:"arroz-premium", category: "arroz", name: "ARROZ PREMIUM", description: "Arroz premium marca Gran Campeón",weight: "15 kg", featured: true, image: premium },
-    { id:"arroz-tradicional", category: "arroz", name: "ARROZ TRADICIONAL", description: "Arroz tradicional marca Gran Campeón",weight: "15 kg", featured: true, image: tradicional },
+
+    { id: "arroz-premium", categories: ["arroz", "gran-campeon"], name: "ARROZ PREMIUM", description: "Arroz premium marca Gran Campeón", weight: "15 kg",featured: true, image: premium },
+    { id: "arroz-tradicional", categories: ["arroz", "gran-campeon"], name: "ARROZ TRADICIONAL", description: "Arroz tradicional marca Gran Campeón",weight: "15 kg", featured: true ,image: tradicional},
         
+    { id: "fideos-cocktail", categories: ["otros", "gran-campeon"], name: "FIDEOS COCKTAIL 10 kg", description: "Fideos cocktail para distribución",weight: "10 kg", featured: true, image: fideos },
+
     // Arroz
     { id:"arroz-partido", category: "arroz", name: "ARROZ PARTIDO", description: "Arroz partido para uso industrial", weight: "30 kg", image: partido30kg},
     
     // Gallinas
-    { id:"mezcla-gallina", category: "gallinas", name: "GALL. ESP", description: "Alimento especializado para gallinas ponedoras",weight: "24 kg | 40 kg", image: gallina30kg  },
-    { id:"mezcla-gallina-ponedora", category: "gallinas", name: "GALL. C/PO", description: "Alimento para gallinas con postura",weight:"24 kg | 40 kg" },
+    { id:"mezcla-gallina", category: "balanceado", name: "GALL. ESP", description: "Alimento especializado para gallinas ponedoras",weight: "24 kg | 40 kg", image: gallina30kg  },
+    { id:"mezcla-gallina-ponedora", category: "balanceado", name: "GALL. C/PO", description: "Alimento para gallinas con postura",weight:"24 kg | 40 kg", image: gallina30kg },
     
     // Mezcla
     // { category: "mezcla", name: "MEZCLA p/CHANCHO", description: "Mezcla nutritiva especial para cerdos",weight: "30kg"  },
     
-    // Granza
-    { id:"granza" ,category: "granza", name: "GRANZA", description: "Granza premium para alimentación animal",weight:"24 kg | 40 kg", image: quebradoFino30kg  },
-    { id:"granzin" ,category: "granza", name: "GRANZIN", description: "Granza fina para aves pequeñas",weight:"24 kg | 40 kg", image: quebradoGrueso30kg },
+    // mezcla
+    { id:"granza" ,category: "balanceado", name: "GRANZA", description: "Granza premium para alimentación animal",weight:"24 kg | 40 kg", image: quebradoGrueso30kg  },
+    { id:"granzin" ,category: "balanceado", name: "GRANZIN", description: "Granza fina para aves pequeñas",weight:"24 kg | 40 kg", image: quebradoFino30kg },
+    { id:"mezcla-hamster" ,category: "balanceado", name: "MEZCLA p/HAMSTER", description: "Mezcla nutritiva para hamsters",weight:"10kg", image: hamster },
     
     // Aves pequeñas
     { id:"mezcla-canario" ,category: "aves", name: "CANARIO c/Vit.", description: "Alimento vitaminado para canarios",weight:"10kg | 30kg", image: canario30kg },
@@ -82,21 +98,21 @@ const Productos = () => {
     { id:"mezcla-pajaro" ,category: "aves", name: "PAJARO c/Vit", description: "Alimento vitaminado para pájaros",weight:"10kg | 30kg", image: alpiste30kg },
     
     // Semillas
-    { id:"alpiste" ,category: "semillas", name: "ALPISTE", description: "Alpiste premium para aves",weight:"10kg | 30kg", image: alpiste30kg },
-    { id:"mijo" ,category: "semillas", name: "MIJO", description: "Mijo de alta calidad",weight:"10kg | 30kg" },
+    { id:"alpiste" ,category: "semillas-cereales", name: "ALPISTE", description: "Alpiste premium para aves",weight:"10kg | 30kg", image: alpiste30kg },
+    { id:"mijo" ,category: "semillas-cereales", name: "MIJO", description: "Mijo de alta calidad",weight:"10kg | 30kg", image: mijo30kg },
     
 
-    // Otros
-    { id:"mezcla-hamster" ,category: "otros", name: "MEZCLA p/HAMSTER", description: "Mezcla nutritiva para hamsters",weight:"10kg", image: hamster },
-    { id:"maiz-pisingallo" ,category: "otros", name: "MAIZ PISINGALLO", description: "Maíz pisingallo de primera calidad",weight:"25kg", image: maiz },
-    { id:"colza" ,category: "otros", name: "COLZA", description: "Semilla de colza premium",weight:"10kg", image: colza },
-    { id:"lino" ,category: "otros", name: "LINO", description: "Semilla de lino de alta calidad",weight:"10kg", image: lino  },
-    { id:"avena-pelada" ,category: "otros", name: "AVENA PELADA", description: "Avena pelada para alimentación",weight:"10kg", image: avena  },
-    { id:"girasol-confitero" ,category: "otros", name: "GIRASOL CONFITERO", description: "Semillas de girasol confitero",weight:"10kg", image: girasol  },
+    // Semillas y cereales
+    { id:"maiz-pisingallo" ,category: "semillas-cereales", name: "MAIZ PISINGALLO", description: "Maíz pisingallo de primera calidad",weight:"25kg", image: maiz },
+    { id:"colza" ,category: "semillas-cereales", name: "COLZA", description: "Semilla de colza premium",weight:"10kg", image: colza },
+    { id:"lino" ,category: "semillas-cereales", name: "LINO", description: "Semilla de lino de alta calidad",weight:"10kg", image: lino  },
+    { id:"avena-pelada" ,category: "semillas-cereales", name: "AVENA PELADA", description: "Avena pelada para alimentación",weight:"10kg", image: avena  },
+    { id:"girasol-confitero" ,category: "semillas-cereales", name: "GIRASOL CONFITERO", description: "Semillas de girasol confitero",weight:"10kg", image: girasol  },
   ];
 
   const filteredProducts = products.filter(product => {
-    const matchesCategory = selectedCategory === "todos" || product.category === selectedCategory;
+    const productCategories = product.categories || [product.category];
+    const matchesCategory = selectedCategory === "todos" || productCategories.includes(selectedCategory);
     const matchesSearch = searchTerm === "" || 
       product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       product.description.toLowerCase().includes(searchTerm.toLowerCase());
@@ -183,7 +199,14 @@ const Productos = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredProducts.map((product, index) => (
-              <Link key={index} to={`/productos/${product.id}`} onClick={() => window.scrollTo({ top: 0})}>
+              <Link
+                key={index}
+                to={`/productos/${product.id}`}
+                onClick={() => {
+                  handleProductClick(); // sin parámetros
+                  window.scrollTo({ top: 0});
+                }}
+              >
               <Card id={product.id} className="hover:shadow-card transition-all duration-300 hover:-translate-y-1">
                 <CardContent className="p-6">
                   {/* Imagen del producto */}
@@ -198,7 +221,7 @@ const Productos = () => {
                   
                   <div className="flex items-center justify-between mb-4">
                     <Badge variant="outline" className="text-xs">
-                      {categories.find(cat => cat.id === product.category)?.name}
+                      {categories.find(cat => cat.id === (product.categories ? product.categories[0] : product.category))?.name}
                     </Badge>
                     {product.featured && (
                       <Badge variant="secondary" className="text-xs">
