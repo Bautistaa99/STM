@@ -141,9 +141,9 @@ const ProductDetail = () => {
       </section>
 
       {/* Product Detail Content */}
-      <section className="py-4">
+      <section className=" py-4">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-8">
             {/* Product Image */}
             <div>
               <Card>
@@ -164,7 +164,7 @@ const ProductDetail = () => {
             {/* Product Info */}
             <div>
               <div className="flex flex-col space-y-6">
-                <div  className="order-2 lg:order-1">
+                <div  className="order-2 lg:order-1 mt-5">
                   <h2 className="text-xl font-semibold text-foreground mb-3">Descripción</h2>
                   <p className="text-muted-foreground leading-relaxed">
                     {product.description}
