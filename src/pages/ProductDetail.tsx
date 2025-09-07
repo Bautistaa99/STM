@@ -112,7 +112,7 @@ const ProductDetail = () => {
       <Navbar />
       
       {/* Header */}
-      <section className="relative py-8 bg-hero-gradient overflow-hidden">
+      <section className="relative pt-8 md:py-8 bg-hero-gradient overflow-hidden">
         <div className="absolute inset-0 bg-background/60"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <button 
@@ -147,13 +147,13 @@ const ProductDetail = () => {
             {/* Product Image */}
             <div>
               <Card>
-                <CardContent className="p-8">
+                <CardContent className="p-4">
                   {/* Imagen del producto */}
-                  <div className="aspect-square mb-4 overflow-hidden rounded-lg flex justify-center">
+                  <div className="aspect-square overflow-hidden rounded-lg flex justify-center">
                     <img
                       src={product.image ?? imagesByCategory[product.category] ?? "/images/products/fallback.jpg"}
                       alt={product.name}
-                      className="h-full w-auto"
+                      className="h-full w-auto rounded-lg" 
                       loading="lazy"
                     />
                   </div>

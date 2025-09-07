@@ -118,6 +118,111 @@ mensaje: "",
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             
+
+
+
+                        <div className="space-y-6">
+              
+              {/* WhatsApp Contact */}
+              <Card className="border-primary/20">
+                <CardContent className="p-6">
+                  <div className="flex flex-col lg:flex-row md:flex-row  items-start lg:space-x-4 md:space-x-4 ">
+                    <div className="bg-green-100 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 mb-2 ">
+                      <MessageCircle className="h-6 w-6 text-green-600" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-semibold mb-2">WhatsApp</h3>
+                      <p className="text-muted-foreground mb-4">
+                        ¿Necesitás una respuesta rápida? Escríbenos por WhatsApp
+                      </p>
+                      <Button asChild className="bg-green-600 hover:bg-green-700">
+                        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+                          <MessageCircle className="mr-2 h-4 w-4" />
+                          Escribir por WhatsApp
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Contact Details */}
+              <Card>
+                <CardHeader>
+                  <CardTitle>Información de Contacto</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <MapPin className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <a href="https://maps.app.goo.gl/V3XSnej3KfpXXrmH6">
+
+                      <h3 className="font-semibold mb-1">Ubicación</h3>
+                      <p className="text-muted-foreground">
+                        Álvarez, Santa Fe<br />
+                        (Al lado de Rosario)
+                      </p>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Phone className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <a href="tel:5491141746937">
+                      <h3 className="font-semibold mb-1">Teléfono</h3>
+                      <p className="text-muted-foreground">
+                        +54 9 11 4174-6937
+                      </p>
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Mail className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold mb-1">Email</h3>
+                      <p className="text-muted-foreground">
+                        contacto@stm.com.ar
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Clock className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold mb-1">Horarios de Atención</h3>
+                      <p className="text-muted-foreground">
+                        Lunes a Viernes: 8:00 - 18:00<br />
+                        Sábados: 8:00 - 13:00
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Additional Info */}
+              <Card className="bg-accent/30">
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-semibold mb-3">Información Adicional</h3>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>• Consultas sin compromiso</li>
+                    <li>• Precios especiales para mayoristas</li>
+                    <li>• Entrega en la zona de Rosario</li>
+                    <li>• Asesoramiento personalizado</li>
+                    <li>• Disponibilidad de productos en stock</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
             {/* Contact Form */}
             <div>
               <Card>
@@ -227,108 +332,7 @@ mensaje: "",
             </div>
 
             {/* Contact Information */}
-            <div className="space-y-6">
-              
-              {/* WhatsApp Contact */}
-              <Card className="border-primary/20">
-                <CardContent className="p-6">
-                  <div className="flex flex-col lg:flex-row md:flex-row  items-start lg:space-x-4 md:space-x-4 ">
-                    <div className="bg-green-100 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 mb-2 ">
-                      <MessageCircle className="h-6 w-6 text-green-600" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-semibold mb-2">WhatsApp</h3>
-                      <p className="text-muted-foreground mb-4">
-                        ¿Necesitás una respuesta rápida? Escríbenos por WhatsApp
-                      </p>
-                      <Button asChild className="bg-green-600 hover:bg-green-700">
-                        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-                          <MessageCircle className="mr-2 h-4 w-4" />
-                          Escribir por WhatsApp
-                        </a>
-                      </Button>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
 
-              {/* Contact Details */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Información de Contacto</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <MapPin className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <a href="https://maps.app.goo.gl/V3XSnej3KfpXXrmH6">
-
-                      <h3 className="font-semibold mb-1">Ubicación</h3>
-                      <p className="text-muted-foreground">
-                        Álvarez, Santa Fe<br />
-                        (Al lado de Rosario)
-                      </p>
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Phone className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <a href="tel:5491141746937">
-                      <h3 className="font-semibold mb-1">Teléfono</h3>
-                      <p className="text-muted-foreground">
-                        +54 9 11 4174-6937
-                      </p>
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Mail className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1">Email</h3>
-                      <p className="text-muted-foreground">
-                        contacto@stm.com.ar
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Clock className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1">Horarios de Atención</h3>
-                      <p className="text-muted-foreground">
-                        Lunes a Viernes: 8:00 - 18:00<br />
-                        Sábados: 8:00 - 13:00
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Additional Info */}
-              <Card className="bg-accent/30">
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold mb-3">Información Adicional</h3>
-                  <ul className="space-y-2 text-muted-foreground">
-                    <li>• Consultas sin compromiso</li>
-                    <li>• Precios especiales para mayoristas</li>
-                    <li>• Entrega en la zona de Rosario</li>
-                    <li>• Asesoramiento personalizado</li>
-                    <li>• Disponibilidad de productos en stock</li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
           </div>
         </div>
       </section>

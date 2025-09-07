@@ -72,9 +72,9 @@ const Index = () => {
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-white text-primary font-bold hover:bg-white/80 hover:text-primary duration-1000">
-              <Link to="/contacto">
+              <a href="https://wa.me/5491141746937?text=Hola,%20queria%20solicitar%20iformacion!">
                 Contactanos
-              </Link>
+              </a>
             </Button>
           </div>
         </div>

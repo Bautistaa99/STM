@@ -49,26 +49,26 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Enlaces Rápidos</h3>
             <div className="space-y-2">
-              <Link to="/productos">
+              <Link to="/productos" onClick={() => window.scrollTo({ top: 0})}>
               <p className="text-sm text-primary-foreground/80">
                 • Productos
               </p>
               </Link>
-              <a href="/nosotros">
+              <Link to="/nosotros" onClick={() => window.scrollTo({ top: 0})}>
               <p className="text-sm text-primary-foreground/80">
                 • Quiénes Somos
               </p>
-              </a>
-              <a href="/contacto">
+              </Link>
+              <Link to="/contacto" onClick={() => window.scrollTo({ top: 0})}>
               <p className="text-sm text-primary-foreground/80">
                 • Contacto
               </p>
-              </a>
-              <a href="ubicacion">
+              </Link>
+              <Link to="ubicacion" onClick={() => window.scrollTo({ top: 0})}>
               <p className="text-sm text-primary-foreground/80">
                 • Ubicación
               </p>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
