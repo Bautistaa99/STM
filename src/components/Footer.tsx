@@ -32,7 +32,7 @@ const Footer = () => {
                 <a href="tel:5491141746937">
 
                 <span className="text-sm text-primary-foreground/80">
-                  +54 9 11 4174-69337
+                  +54 9 11 4174-6937
                 </span>
                 </a>
               </div>

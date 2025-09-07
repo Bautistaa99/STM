@@ -81,54 +81,83 @@ const Index = () => {
       </section>
 
       {/* Featured Products */}
-      <section className="py-16 bg-hero-gradient">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Productos Más Vendidos
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Los productos que nuestros clientes eligen por su calidad y precio competitivo
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredProducts.map((product, index) => (
-              <Link key={index} to={`/productos/${product.id}`} onClick={() => window.scrollTo({ top: 0})}>
-              <Card className="hover:shadow-card transition-all duration-300 hover:-translate-y-1">
-                <CardContent className="p-6">
-                  <div className="aspect-square mb-4 overflow-hidden rounded-lg bg-white flex justify-center">
-                    <img 
-                      src={product.image} 
-                      alt={product.name}
-                      className="w-auto h-full"
-                    />
-                  </div>
-                  <div className="flex items-center mb-2">
-                    <Star className="h-4 w-4 text-yellow-500 fill-current" />
-                    <span className="text-sm text-muted-foreground ml-1">Más Vendido</span>
-                  </div>
-                  <h3 className="font-semibold text-lg mb-2">{product.name}</h3>
-                  <p className="text-sm text-primary font-medium mb-2">{product.brand}</p>
-                  <p className="text-sm text-muted-foreground">{product.description}</p>
-                  <Button className="w-full mt-5">
-                    Ver detalle
-                  </Button>
-                </CardContent>
-              </Card>
-              </Link>
-            ))}
-          </div>
-          
-          <div className="text-center mt-12">
-            <Button asChild size="lg" variant="outline">
-              <Link to="/productos">
-                Ver Todos los Productos <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+<section className="py-16 bg-hero-gradient">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+        Productos Más Vendidos
+      </h2>
+      <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        Los productos que nuestros clientes eligen por su calidad y precio competitivo
+      </p>
+    </div>
+    
+    {/* 🔧 grid más compacto y estirando items */}
+    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 items-stretch">
+      {featuredProducts.map((product, index) => (
+        <Link
+          key={index}
+          to={`/productos/${product.id}`}
+          onClick={() => window.scrollTo({ top: 0 })}
+          className="h-full"  /* el enlace ocupa todo el alto de la celda */
+        >
+          <Card className="h-full flex flex-col hover:shadow-card transition-all duration-300 hover:-translate-y-0.5">
+            <CardContent className="flex flex-col h-full p-3 sm:p-4 md:p-6">
+              
+              {/* 🖼️ imagen con alto consistente */}
+              <div className="mb-2 rounded-lg overflow-hidden bg-white">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full aspect-[4/5] object-contain"
+                />
+              </div>
+
+              {/* Badges */}
+              <div className="flex items-center mb-1">
+                <Star className="h-4 w-4 text-yellow-500 fill-current" />
+                <span className="text-[10px] sm:text-xs text-muted-foreground ml-1">
+                  Más Vendido
+                </span>
+              </div>
+
+              {/* 📝 texto con alturas mínimas para igualar */}
+              <h3 className="font-semibold text-sm sm:text-base leading-tight line-clamp-2 min-h-[2.5rem]">
+                {product.name}
+              </h3>
+              {product.brand && (
+                <p className="text-xs sm:text-sm text-primary font-medium mt-1">
+                  {product.brand}
+                </p>
+              )}
+              <p className="hidden sm:block text-sm text-muted-foreground mt-1 line-clamp-2 min-h-[2.5rem]">
+                {product.description}
+              </p>
+
+              {/* ⚓ botón siempre al fondo */}
+              <div className="mt-auto pt-3">
+                <Button className="w-full h-9 text-sm">
+                  Ver detalle
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </Link>
+      ))}
+    </div>
+    
+    <div className="text-center mt-10 sm:mt-12">
+      <Button asChild size="lg" variant="outline">
+        <Link to="/productos">
+          Ver Todos los Productos <ArrowRight className="ml-2 h-4 w-4" />
+        </Link>
+      </Button>
+    </div>
+  </div>
+</section>
+
 
       {/* Features */}
       <section className="py-16">
