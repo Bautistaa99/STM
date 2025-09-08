@@ -129,7 +129,7 @@ const filteredProducts = products.filter(product => { const productCategories = 
       <section className="sticky top-0 z-40 bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           {/* Categorías */}
-          <div className="flex items-center mb-2">
+          <div className="flex items-center mb-2 ">
             <Filter className="h-5 w-5 text-muted-foreground mr-2" />
             <span className="text-sm font-medium text-muted-foreground">Filtrar por categoría:</span>
           </div>
