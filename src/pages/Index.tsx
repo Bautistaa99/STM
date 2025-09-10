@@ -65,7 +65,7 @@ const Index = () => {
             Calidad que alimenta el futuro
           </p>
           <p className="text-lg mb-8 max-w-2xl mx-auto font-semibold">
-            Nutrición confiable para animales y alimentos agroalimenticios de calidad,<br/> directo del molino a todo el país.
+            Nutrición confiable para animales.<br/> Alimentos agroalimenticios de calidad, directo del molino a todo el país.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-primary hover:bg-primary/80 font-bold duration-1000">

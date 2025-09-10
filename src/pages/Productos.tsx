@@ -60,7 +60,7 @@ const Productos = () => {
   const categories = [
     { id: "todos", name: "Todos los Productos", icon: "🌾" },
     { id: "gran-campeon", name: "Gran Campeón", icon: "🏆" },
-    { id: "balanceado", name: "Alimentos balanceados", icon: "🐖" },
+    { id: "balanceado", name: "Alimento balanceado", icon: "🐖" },
     { id: "aves", name: "Aves Pequeñas", icon: "🐦" },
     { id: "semillas-cereales", name: "Semillas y cereales", icon: "🌱" },
     { id: "arroz", name: "Arroz", icon: "🍚" },
@@ -69,9 +69,9 @@ const Productos = () => {
 
   const products = [
     // Arroz
-    { id: "arroz-premium", categories: ["arroz", "gran-campeon"], name: "Arroz Premium Gran Campéon", description: "Arroz saborizado para perros Premium", weight: "15 kg", featured: true, image: premium },
-    { id: "arroz-tradicional", categories: ["arroz", "gran-campeon"], name: "Arroz Tradicional Gran Campéon", description: "Arroz saborizado para perros", weight: "15 kg", featured: true, image: tradicional },
-    { id: "fideos-cocktail", categories: ["otros", "gran-campeon"], name: "Fideos Cocktail Gran Campéon", description: "Fideos saborizados para perros", weight: "10 kg", featured: true, image: fideos },
+    { id: "arroz-premium", categories: ["arroz", "gran-campeon"], name: "Arroz Saborizado Premium", description: "Arroz saborizado para perros calidad Premium Gran Campeón", weight: "15 kg", featured: true, image: premium },
+    { id: "arroz-tradicional", categories: ["arroz", "gran-campeon"], name: "Arroz Saborizado Tradicional", description: "Arroz saborizado para perros calidad Tradicional Gran Campeón", weight: "15 kg", featured: true, image: tradicional },
+    { id: "fideos-cocktail", categories: ["otros", "gran-campeon"], name: "Fideos Cocktail", description: "Fideos saborizados para perros marca Gran Campeón", weight: "10 kg", featured: true, image: fideos },
     { id: "mezcla-gallina", category: "balanceado", name: "Mezcla para Gallinas", description: "Alimento balanceado para gallinas", weight: "24 kg | 40 kg", image: gallina30kg, featured: true },
 
     // Arroz
@@ -195,9 +195,9 @@ const filteredProducts = products.filter(product => { const productCategories = 
                     window.scrollTo({ top: 0 });
                   }}
                 >
-                  <Card id={product.id} className="hover:shadow-card transition-all duration-300 hover:-translate-y-0.5">
+                  <Card id={product.id} className="hover:shadow-card transition-all duration-300 hover:-translate-y-0.5 h-full">
                     <CardContent className="p-3 sm:p-4">
-                      <div className="mb-2 rounded-md overflow-hidden bg-muted/30">
+                      <div className="mb-2 rounded-md overflow-hidden bg-muted/10 flex flex-col h-full border">
                         <img
                           src={product.image ?? imagesByCategory[product.category] ?? "/images/products/fallback.jpg"}
                           alt={product.name}
@@ -209,21 +209,21 @@ const filteredProducts = products.filter(product => { const productCategories = 
                         />
                       </div>
 
-                      <div className="flex items-center justify-between mb-1">
-                        <Badge variant="outline" className="text-[10px] sm:text-xs">
+                      <div className="flex items-center justify-between mb-1 h-12 gap-3 xs:gap-0">
+                        <Badge variant="outline" className="text-[10px] sm:text-xs" >
                           {badgeText}
                         </Badge>
                         {product.featured && (
-                          <Badge variant="secondary" className="text-[10px] sm:text-xs font-bold">Más Vendido</Badge>
+                          <Badge variant="secondary" className="text-[10px] sm:text-xs font-bold min-w-[40%]">Más Vendido</Badge>
                         )}
                       </div>
 
-                      <h3 className="font-semibold text-sm sm:text-base leading-tight line-clamp-2">
+                      <h3 className="font-semibold text-sm sm:text-base leading-tight line-clamp-2 sm:min-h-12 xl:min-h-6">
                         {product.name}
                       </h3>
 
                       {/* Descripción oculta en XS para compactar */}
-                      <p className="hidden sm:block text-sm text-muted-foreground mt-1 line-clamp-2">
+                      <p className="hidden sm:block text-sm text-muted-foreground mt-1 line-clamp-2 min-h-10 sm:min-h-16 xl:min-h-10">
                         {product.description}
                       </p>
 
