@@ -73,6 +73,7 @@ const Productos = () => {
     { id: "arroz-tradicional", categories: ["arroz", "gran-campeon"], name: "Arroz Saborizado Tradicional", description: "Arroz saborizado para perros calidad Tradicional Gran Campeón", weight: "15 kg", featured: true, image: tradicional },
     { id: "fideos-cocktail", categories: ["otros", "gran-campeon"], name: "Fideos Cocktail", description: "Fideos saborizados para perros marca Gran Campeón", weight: "10 kg", featured: true, image: fideos },
     { id: "mezcla-gallina", category: "balanceado", name: "Mezcla para Gallinas", description: "Alimento balanceado para gallinas", weight: "24 kg | 40 kg", image: gallina30kg, featured: true },
+    { id: "mezcla-chancho", category: "balanceado", name: "Mezcla para Chanchos", description: "Farineta / harina de maíz balanceada para nutrición", weight: "30 kg", image: chancho30kg },
 
     // Arroz
     { id: "arroz-partido", category: "arroz", name: "Arroz Partido", description: "Arroz partido para uso industrial", weight: "30 kg", image: partido30kg },
@@ -80,7 +81,6 @@ const Productos = () => {
     // Balanceado
     { id: "granza", category: "balanceado", name: "Granza", description: "Maíz pisado grueso", weight: "24 kg | 40 kg", image: quebradoGrueso30kg },
     { id: "granzin", category: "balanceado", name: "Granzín", description: "Maíz pisado fino", weight: "24 kg | 40 kg", image: quebradoFino30kg },
-    { id: "mezcla-chancho", category: "balanceado", name: "Mezcla para Chanchos", description: "Farineta / harina de maíz balanceada para nutrición", weight: "30 kg", image: chancho30kg },
     { id: "mezcla-hamster", category: "balanceado", name: "Mezcla para Hámsters", description: "Mezcla nutritiva para hámsters", weight: "10 kg", image: hamster },
 
     // Aves pequeñas
