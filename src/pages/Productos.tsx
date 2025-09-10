@@ -69,33 +69,34 @@ const Productos = () => {
 
   const products = [
     // Arroz
-    { id: "arroz-premium", categories: ["arroz", "gran-campeon"], name: "ARROZ PREMIUM", description: "Arroz premium marca Gran Campeón", weight: "15 kg", featured: true, image: premium },
-    { id: "arroz-tradicional", categories: ["arroz", "gran-campeon"], name: "ARROZ TRADICIONAL", description: "Arroz tradicional marca Gran Campeón", weight: "15 kg", featured: true, image: tradicional },
-    { id: "fideos-cocktail", categories: ["otros", "gran-campeon"], name: "FIDEOS COCKTAIL 10 kg", description: "Fideos cocktail para distribución", weight: "10 kg", featured: true, image: fideos },
+    { id: "arroz-premium", categories: ["arroz", "gran-campeon"], name: "Arroz Premium Gran Campéon", description: "Arroz saborizado para perros Premium", weight: "15 kg", featured: true, image: premium },
+    { id: "arroz-tradicional", categories: ["arroz", "gran-campeon"], name: "Arroz Tradicional Gran Campéon", description: "Arroz saborizado para perros", weight: "15 kg", featured: true, image: tradicional },
+    { id: "fideos-cocktail", categories: ["otros", "gran-campeon"], name: "Fideos Cocktail Gran Campéon", description: "Fideos saborizados para perros", weight: "10 kg", featured: true, image: fideos },
+    { id: "mezcla-gallina", category: "balanceado", name: "Mezcla para Gallinas", description: "Alimento balanceado para gallinas", weight: "24 kg | 40 kg", image: gallina30kg, featured: true },
 
     // Arroz
-    { id: "arroz-partido", category: "arroz", name: "ARROZ PARTIDO", description: "Arroz partido para uso industrial", weight: "30 kg", image: partido30kg },
+    { id: "arroz-partido", category: "arroz", name: "Arroz Partido", description: "Arroz partido para uso industrial", weight: "30 kg", image: partido30kg },
 
     // Balanceado
-    { id: "mezcla-gallina", category: "balanceado", name: "MEZCLA p/GALLINA", description: "Alimento para gallinas con postura", weight: "24 kg | 40 kg", image: gallina30kg },
-    { id: "granza", category: "balanceado", name: "GRANZA", description: "Granza premium para alimentación animal", weight: "24 kg | 40 kg", image: quebradoGrueso30kg },
-    { id: "granzin", category: "balanceado", name: "GRANZIN", description: "Granza fina para aves pequeñas", weight: "24 kg | 40 kg", image: quebradoFino30kg },
-    { id: "mezcla-chancho", category: "balanceado", name: "MEZCLA p/CHANCHO", description: "Alimento para chancho", weight: "30 kg", image: chancho30kg },
-    { id: "mezcla-hamster", category: "balanceado", name: "MEZCLA p/HAMSTER", description: "Mezcla nutritiva para hamsters", weight: "10kg", image: hamster },
+    { id: "granza", category: "balanceado", name: "Granza", description: "Maíz pisado grueso", weight: "24 kg | 40 kg", image: quebradoGrueso30kg },
+    { id: "granzin", category: "balanceado", name: "Granzín", description: "Maíz pisado fino", weight: "24 kg | 40 kg", image: quebradoFino30kg },
+    { id: "mezcla-chancho", category: "balanceado", name: "Mezcla para Chanchos", description: "Farineta / harina de maíz balanceada para nutrición", weight: "30 kg", image: chancho30kg },
+    { id: "mezcla-hamster", category: "balanceado", name: "Mezcla para Hámsters", description: "Mezcla nutritiva para hámsters", weight: "10 kg", image: hamster },
 
     // Aves pequeñas
-    { id: "mezcla-canario", category: "aves", name: "CANARIO c/Vit.", description: "Alimento vitaminado para canarios", weight: "10kg | 30kg", image: canario30kg },
-    { id: "mezcla-cardenal", category: "aves", name: "CARDENAL x", description: "Alimento especializado para cardenales", weight: "10kg | 30kg", image: cardenal30kg },
-    { id: "mezcla-pajaro", category: "aves", name: "PAJARO c/Vit", description: "Alimento vitaminado para pájaros", weight: "10kg | 30kg", image: alpiste30kg },
+    { id: "mezcla-canario", category: "aves", name: "Mezcla para Canarios con Vitaminas", description: "Alimento vitaminado para canarios", weight: "10 kg | 30 kg", image: canario30kg },
+    { id: "mezcla-cardenal", category: "aves", name: "Mezcla para Cardenales", description: "Alimento especializado para cardenales", weight: "10 kg | 30 kg", image: cardenal30kg },
+    { id: "mezcla-pajaro", category: "aves", name: "Mezcla para Pájaros con Vitaminas", description: "Alimento vitaminado para pájaros", weight: "10 kg | 30 kg", image: alpiste30kg },
 
     // Semillas y cereales
-    { id: "alpiste", category: "semillas-cereales", name: "ALPISTE", description: "Alpiste premium para aves", weight: "10kg | 30kg", image: alpiste30kg },
-    { id: "mijo", category: "semillas-cereales", name: "MIJO", description: "Mijo de alta calidad", weight: "10kg | 30kg", image: mijo30kg },
-    { id: "maiz-pisingallo", category: "semillas-cereales", name: "MAIZ PISINGALLO", description: "Maíz pisingallo de primera calidad", weight: "25kg", image: maiz },
-    { id: "colza", category: "semillas-cereales", name: "COLZA", description: "Semilla de colza premium", weight: "10kg", image: colza },
-    { id: "lino", category: "semillas-cereales", name: "LINO", description: "Semilla de lino de alta calidad", weight: "10kg", image: lino },
-    { id: "avena-pelada", category: "semillas-cereales", name: "AVENA PELADA", description: "Avena pelada para alimentación", weight: "10kg", image: avena },
-    { id: "girasol-confitero", category: "semillas-cereales", name: "GIRASOL CONFITERO", description: "Semillas de girasol confitero", weight: "10kg", image: girasol },
+    { id: "alpiste", category: "semillas-cereales", name: "Alpiste", description: "Alpiste premium para aves", weight: "10 kg | 30 kg", image: alpiste30kg },
+    { id: "mijo", category: "semillas-cereales", name: "Mijo", description: "Mijo de alta calidad", weight: "10 kg | 30 kg", image: mijo30kg },
+    { id: "avena-pelada", category: "semillas-cereales", name: "Avena Pelada", description: "Avena pelada para alimentación", weight: "10 kg", image: avena },
+    { id: "girasol-confitero", category: "semillas-cereales", name: "Girasol Confitero", description: "Semillas de girasol confitero", weight: "10 kg", image: girasol },
+    { id: "maiz-pisingallo", category: "semillas-cereales", name: "Maíz Pisingallo", description: "Maíz pisingallo de primera calidad", weight: "25 kg", image: maiz },
+    { id: "colza", category: "semillas-cereales", name: "Colza", description: "Semilla de colza premium", weight: "10 kg", image: colza },
+    { id: "lino", category: "semillas-cereales", name: "Lino", description: "Semilla de lino de alta calidad", weight: "10 kg", image: lino },
+
   ];
 
 const filteredProducts = products.filter(product => { const productCategories = product.categories || [product.category]; const matchesCategory = selectedCategory === "todos" || productCategories.includes(selectedCategory); const matchesSearch = searchTerm === "" || product.name.toLowerCase().includes(searchTerm.toLowerCase()) || product.description.toLowerCase().includes(searchTerm.toLowerCase()); return matchesCategory && matchesSearch; });
@@ -213,7 +214,7 @@ const filteredProducts = products.filter(product => { const productCategories = 
                           {badgeText}
                         </Badge>
                         {product.featured && (
-                          <Badge variant="secondary" className="text-[10px] sm:text-xs">Más Vendido</Badge>
+                          <Badge variant="secondary" className="text-[10px] sm:text-xs font-bold">Más Vendido</Badge>
                         )}
                       </div>
 

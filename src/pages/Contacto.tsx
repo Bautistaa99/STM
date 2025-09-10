@@ -189,7 +189,7 @@ mensaje: "",
                     <div>
                       <h3 className="font-semibold mb-1">Email</h3>
                       <p className="text-muted-foreground">
-                        contacto@stm.com.ar
+                        plantaalvarez@grupogem.com.ar
                       </p>
                     </div>
                   </div>
@@ -201,8 +201,8 @@ mensaje: "",
                     <div>
                       <h3 className="font-semibold mb-1">Horarios de Atención</h3>
                       <p className="text-muted-foreground">
-                        Lunes a Viernes: 8:00 - 18:00<br />
-                        Sábados: 8:00 - 13:00
+                        Lunes a Viernes: 8:00 - 16:00<br />
+                        Sábados: 8:00 - 12:00
                       </p>
                     </div>
                   </div>

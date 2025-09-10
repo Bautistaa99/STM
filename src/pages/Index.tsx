@@ -56,9 +56,11 @@ const Index = () => {
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 ">
-            STM
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            STM 
+            <span className="sr-only">Arroz saborizado para perros, arroz partido, mezcla para gallina, mezcla para chancho</span>
           </h1>
+
           <p className="text-xl md:text-2xl mb-8 font-light">
             Productos Agroalimenticios de Calidad
           </p>
