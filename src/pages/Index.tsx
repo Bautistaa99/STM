@@ -53,19 +53,19 @@ const Index = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
-          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="absolute inset-0 bg-black/60"></div>
         </div>
-        <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
+        <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4 rounded-full">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             STM 
             <span className="sr-only">Arroz saborizado para perros, arroz partido, mezcla para gallina, mezcla para chancho</span>
           </h1>
 
-          <p className="text-xl md:text-2xl mb-8 font-light">
-            Productos Agroalimenticios de Calidad
+          <p className="text-xl md:text-2xl mb-8 font-bold">
+            Calidad que alimenta el futuro
           </p>
-          <p className="text-lg mb-8 max-w-2xl mx-auto">
-            Proveemos alimentos balanceados y productos agroalimenticios <br/> a distribuidores de todo el pais.
+          <p className="text-lg mb-8 max-w-2xl mx-auto font-semibold">
+            Nutrición confiable para animales y alimentos agroalimenticios de calidad,<br/> directo del molino a todo el país.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-primary hover:bg-primary/80 font-bold duration-1000">
@@ -74,7 +74,7 @@ const Index = () => {
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-white text-primary font-bold hover:bg-white/80 hover:text-primary duration-1000">
-              <a href="https://wa.me/5491141746937?text=Hola,%20queria%20solicitar%20iformacion!">
+              <a href="https://wa.me/5491141746937?text=Hola,%20queria%20solicitar%20iformacion!" target="_blank">
                 Contactanos
               </a>
             </Button>

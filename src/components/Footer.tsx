@@ -21,7 +21,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4" />
-                <a href="https://maps.app.goo.gl/V3XSnej3KfpXXrmH6">
+                <a href="https://maps.app.goo.gl/V3XSnej3KfpXXrmH6" target="_blank">
                 <span className="text-sm text-primary-foreground/80">
                   Álvarez, Santa Fe
                 </span>
@@ -29,8 +29,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4" />
-                <a href="tel:5491141746937">
-
+                <a href="tel:5491141746937" target="_blank">
                 <span className="text-sm text-primary-foreground/80">
                   +54 9 11 4174-6937
                 </span>
@@ -38,7 +37,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4" />
-                <a href="mailto:plantaalvarez@grupogem.com.ar">
+                <a href="mailto:plantaalvarez@grupogem.com.ar" target="_blank">
                 <span className="text-sm text-primary-foreground/80">
                   plantaalvarez@grupogem.com.ar
                 </span>

@@ -157,7 +157,7 @@ mensaje: "",
                       <MapPin className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <a href="https://maps.app.goo.gl/V3XSnej3KfpXXrmH6">
+                      <a href="https://maps.app.goo.gl/V3XSnej3KfpXXrmH6" target="_blank">
 
                       <h3 className="font-semibold mb-1">Ubicación</h3>
                       <p className="text-muted-foreground">
@@ -173,7 +173,7 @@ mensaje: "",
                       <Phone className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <a href="tel:5491141746937">
+                      <a href="tel:5491141746937" target="_blank">
                       <h3 className="font-semibold mb-1">Teléfono</h3>
                       <p className="text-muted-foreground">
                         +54 9 11 4174-6937
@@ -187,10 +187,12 @@ mensaje: "",
                       <Mail className="h-6 w-6 text-primary" />
                     </div>
                     <div>
+                      <a href="mailto:plantaalvarez@grupogem.com.ar" target="_blank">
                       <h3 className="font-semibold mb-1">Email</h3>
                       <p className="text-muted-foreground">
                         plantaalvarez@grupogem.com.ar
                       </p>
+                      </a>
                     </div>
                   </div>
 

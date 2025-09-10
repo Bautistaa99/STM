@@ -84,9 +84,9 @@ const Productos = () => {
     { id: "mezcla-hamster", category: "balanceado", name: "Mezcla para Hámsters", description: "Mezcla nutritiva para hámsters", weight: "10 kg", image: hamster },
 
     // Aves pequeñas
-    { id: "mezcla-canario", category: "aves", name: "Mezcla para Canarios con Vitaminas", description: "Alimento vitaminado para canarios", weight: "10 kg | 30 kg", image: canario30kg },
+    { id: "mezcla-canario", category: "aves", name: "Mezcla para Canarios", description: "Alimento vitaminado para canarios", weight: "10 kg | 30 kg", image: canario30kg },
     { id: "mezcla-cardenal", category: "aves", name: "Mezcla para Cardenales", description: "Alimento especializado para cardenales", weight: "10 kg | 30 kg", image: cardenal30kg },
-    { id: "mezcla-pajaro", category: "aves", name: "Mezcla para Pájaros con Vitaminas", description: "Alimento vitaminado para pájaros", weight: "10 kg | 30 kg", image: alpiste30kg },
+    { id: "mezcla-pajaro", category: "aves", name: "Mezcla para Pájaros", description: "Alimento vitaminado para pájaros", weight: "10 kg | 30 kg", image: alpiste30kg },
 
     // Semillas y cereales
     { id: "alpiste", category: "semillas-cereales", name: "Alpiste", description: "Alpiste premium para aves", weight: "10 kg | 30 kg", image: alpiste30kg },
@@ -129,7 +129,7 @@ const filteredProducts = products.filter(product => { const productCategories = 
       </section>
 
       {/* Filtros sticky */}
-      <section className="sticky top-0 z-40 bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
+      <section className="sticky top-16 z-40 bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           {/* Categorías */}
           <div className="flex items-center mb-2 ">
