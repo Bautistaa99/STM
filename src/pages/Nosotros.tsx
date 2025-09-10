@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, Users, Award, Clock } from "lucide-react";
-import nosotrosHero from "@/assets/nosotros-hero.jpg";
+import nosotrosHero from "@/assets/nosotros-hero.webp";
 
 const Nosotros = () => {
   return (

@@ -9,7 +9,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Phone, Mail, MapPin, MessageCircle, Clock, Send, Loader2 } from "lucide-react";
 import emailjs from "emailjs-com";
-import contactoHero from "@/assets/contacto-hero.jpg";
+import contactoHero from "@/assets/contacto-hero.webp";
 
 // EmailJS Configuration - Replace VITE_EMAILJS_PUBLIC_KEY with your actual public key
 const EMAILJS_SERVICE_ID = "service_cvii9k7";

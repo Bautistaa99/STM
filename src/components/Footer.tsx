@@ -38,9 +38,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4" />
+                <a href="mailto:plantaalvarez@grupogem.com.ar">
                 <span className="text-sm text-primary-foreground/80">
-                  contacto@stm.com.ar
+                  plantaalvarez@grupogem.com.ar
                 </span>
+                </a>
               </div>
             </div>
           </div>

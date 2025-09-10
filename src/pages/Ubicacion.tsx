@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { MapPin, Navigation, Clock, Car, Truck } from "lucide-react";
-import ubicacionHero from "@/assets/ubicacion-hero.jpg";
+import ubicacionHero from "@/assets/ubicacion-hero.webp";
 
 const Ubicacion = () => {
   return (

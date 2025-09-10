@@ -10,7 +10,9 @@ import Nosotros from "./pages/Nosotros";
 import Contacto from "./pages/Contacto";
 import Ubicacion from "./pages/Ubicacion";
 import NotFound from "./pages/NotFound";
+import { injectSpeedInsights } from '@vercel/speed-insights';
 
+injectSpeedInsights();
 const queryClient = new QueryClient();
 
 const App = () => (

@@ -4,11 +4,11 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
 import { ArrowRight, Star, Truck, Shield, Wheat } from "lucide-react";
-import heroImage from "@/assets/hero-agro.jpg";
-import riceImage from "@/assets/productos/tradicional.png";
-import chickenFeedImage from "@/assets/productos/mezcla.png";
-import fideosImage from "@/assets/productos/cocktail.png";
-import ricePremium from "@/assets/productos/premium.png";
+import heroImage from "@/assets/hero-agro.webp";
+import riceImage from "@/assets/productos/tradicional.webp";
+import chickenFeedImage from "@/assets/productos/mezcla.webp";
+import fideosImage from "@/assets/productos/cocktail.webp";
+import ricePremium from "@/assets/productos/premium.webp";
 
 
 const Index = () => {

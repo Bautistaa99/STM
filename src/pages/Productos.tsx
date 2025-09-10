@@ -7,26 +7,27 @@ import { Input } from "@/components/ui/input";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Package, Filter, Search } from "lucide-react";
-import productosHero from "@/assets/productos-hero.jpg";
+import productosHero from "@/assets/productos-hero.webp";
 
 // imágenes
-import alpiste30kg from "@/assets/productos/alpiste30kg.jpg";
-import canario30kg from "@/assets/productos/canario30kg.jpg";
-import cardenal30kg from "@/assets/productos/cardenal30kg.jpg";
-import gallina30kg from "@/assets/productos/gallina30kg.jpg";
-import hamster from "@/assets/productos/hamster30kg.jpg";
-import mijo30kg from "@/assets/productos/mijo30kg.jpg";
-import partido30kg from "@/assets/productos/partido30kg.jpg";
-import quebradoFino30kg from "@/assets/productos/quebradoFino30kg.jpg";
-import quebradoGrueso30kg from "@/assets/productos/quebradoGrueso30kg.jpg";
-import fideos from "@/assets/productos/cocktail.png";
-import tradicional from "@/assets/productos/tradicional.png";
-import premium from "@/assets/productos/premium.png";
-import avena from "@/assets/productos/granel/avena.png";
-import colza from "@/assets/productos/granel/colza.png";
-import girasol from "@/assets/productos/granel/girasol.png";
-import maiz from "@/assets/productos/granel/maiz.png";
-import lino from "@/assets/productos/granel/lino.png";
+import alpiste30kg from "@/assets/productos/alpiste30kg.webp";
+import canario30kg from "@/assets/productos/canario30kg.webp";
+import cardenal30kg from "@/assets/productos/cardenal30kg.webp";
+import gallina30kg from "@/assets/productos/gallina30kg.webp";
+import hamster from "@/assets/productos/hamster30kg.webp";
+import mijo30kg from "@/assets/productos/mijo30kg.webp";
+import chancho30kg from "@/assets/productos/chancho30kg.webp";
+import partido30kg from "@/assets/productos/partido30kg.webp";
+import quebradoFino30kg from "@/assets/productos/quebradoFino30kg.webp";
+import quebradoGrueso30kg from "@/assets/productos/quebradoGrueso30kg.webp";
+import fideos from "@/assets/productos/cocktail.webp";
+import tradicional from "@/assets/productos/tradicional.webp";
+import premium from "@/assets/productos/premium.webp";
+import avena from "@/assets/productos/granel/avena.webp";
+import colza from "@/assets/productos/granel/colza.webp";
+import girasol from "@/assets/productos/granel/girasol.webp";
+import maiz from "@/assets/productos/granel/maiz.webp";
+import lino from "@/assets/productos/granel/lino.webp";
 
 // Fallback por categoría
 const imagesByCategory: Record<string, string> = {
@@ -76,9 +77,10 @@ const Productos = () => {
     { id: "arroz-partido", category: "arroz", name: "ARROZ PARTIDO", description: "Arroz partido para uso industrial", weight: "30 kg", image: partido30kg },
 
     // Balanceado
-    { id: "mezcla-gallina-ponedora", category: "balanceado", name: "Mezcla Gallina", description: "Alimento para gallinas con postura", weight: "24 kg | 40 kg", image: gallina30kg },
+    { id: "mezcla-gallina", category: "balanceado", name: "MEZCLA p/GALLINA", description: "Alimento para gallinas con postura", weight: "24 kg | 40 kg", image: gallina30kg },
     { id: "granza", category: "balanceado", name: "GRANZA", description: "Granza premium para alimentación animal", weight: "24 kg | 40 kg", image: quebradoGrueso30kg },
     { id: "granzin", category: "balanceado", name: "GRANZIN", description: "Granza fina para aves pequeñas", weight: "24 kg | 40 kg", image: quebradoFino30kg },
+    { id: "mezcla-chancho", category: "balanceado", name: "MEZCLA p/CHANCHO", description: "Alimento para chancho", weight: "30 kg", image: chancho30kg },
     { id: "mezcla-hamster", category: "balanceado", name: "MEZCLA p/HAMSTER", description: "Mezcla nutritiva para hamsters", weight: "10kg", image: hamster },
 
     // Aves pequeñas
